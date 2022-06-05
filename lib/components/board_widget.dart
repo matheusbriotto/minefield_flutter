@@ -18,7 +18,6 @@ class BoardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('colunas:' + this.board.columns.toString());
     return Container(
       child: GridView.count(
         crossAxisCount: board.columns,

@@ -28,18 +28,14 @@ class Board {
   }
 
   void _createFields() {
-    print('_createFields');
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < columns; c++) {
         _fields.add(Field(row: r, column: c));
       }
     }
-    print(quantifyBomb);
-    print(_fields.length);
   }
 
   void _relateNeighBors() {
-    print('_relateNeighBors');
     for (var field in _fields) {
       for (var neighbor in _fields) {
         field.addNeighbords(neighbor);
@@ -48,18 +44,12 @@ class Board {
   }
 
   void _sortedMines() {
-    print('_sortedMines');
     int sorted = 0;
 
     if (quantifyBomb > rows * columns) {
-      print('nao poderia ter caido aqui');
       return;
     }
-
-    print(sorted);
-    print(quantifyBomb);
     while (sorted < quantifyBomb) {
-      print('while');
       int i = Random().nextInt(_fields.length);
 
       if (!_fields[i].mined) {
